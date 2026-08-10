@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Env files — never commit real secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Build outputs
+.next/
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Prisma
+apps/api/prisma/migrations/dev/
+
+# Logs
+*.log
+npm-debug.log*
+logs/
+
+# Testing
+coverage/
+playwright-report/
+test-results/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Turborepo / caches
+.turbo/
+
+# Misc
+*.pem
+_legacy-v0/

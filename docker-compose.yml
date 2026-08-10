@@ -1,0 +1,37 @@
+version: "3.9"
+
+# Local dev infra only — Postgres (with pgvector) and Redis. Run the apps
+# themselves on the host with `npm run dev:api` / `npm run dev:worker` /
+# `npm run dev:web` so hot reload keeps working. See docs/deployment-railway.md
+# for how the api/worker services actually get containerized in production.
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: pr_pilot
+    ports:
+      - "5432:5432"
+    volumes:
+      - pr_pilot_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  pr_pilot_postgres_data:

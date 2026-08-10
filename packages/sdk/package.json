@@ -1,0 +1,21 @@
+{
+  "name": "@pr-pilot/sdk",
+  "version": "1.0.0",
+  "description": "Official TypeScript client for the PR-Pilot API — grounded code context and impact analysis for AI coding agents and CI.",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@pr-pilot/types": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}

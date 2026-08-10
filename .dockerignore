@@ -1,0 +1,9 @@
+node_modules
+**/node_modules
+**/dist
+**/.next
+**/*.tsbuildinfo
+.git
+_legacy-v0
+docs
+*.md
