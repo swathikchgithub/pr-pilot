@@ -44,3 +44,5 @@ Thumbs.db
 # Misc
 *.pem
 _legacy-v0/
+.vercel
+.env*
