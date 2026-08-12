@@ -70,6 +70,21 @@ npm run dev:web
 Visit `http://localhost:3000`, register an org, register a GitHub repo, and watch its
 status move from `PENDING` → `INDEXING` → `READY` in the Repositories page.
 
+## Example queries
+
+Grounded questions about actual source code work best — the ingestion pipeline only
+indexes recognized source-code file types (see `apps/worker/src/github/file-filters.ts`),
+not markdown/docs, so broad "what is this project" questions may come back empty on
+doc-heavy repos. Specific, code-level questions retrieve well, for example (asked
+against this repo itself):
+
+- "How does the OrgAuthGuard validate a request?"
+- "How does the ingestion pipeline chunk a file?"
+- "How is impact analysis computed from a diff?"
+
+Each answer comes back with citations pointing at the exact file and line range it was
+grounded in.
+
 ## Environment variables
 
 See [`.env.example`](.env.example) for the full annotated list (Postgres/Redis URLs,
