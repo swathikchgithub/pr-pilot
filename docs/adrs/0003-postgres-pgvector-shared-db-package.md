@@ -16,8 +16,8 @@ the two services drift out of sync.
 - Own the Prisma schema, migrations, and generated client in **`packages/db`**.
   `apps/api` and `apps/worker` both depend on `@pr-pilot/db` and never touch
   `@prisma/client` directly.
-- The `code_chunks.embedding` column is `vector(768)` (Google `text-embedding-004`
-  output size), declared via Prisma's `Unsupported("vector(768)")` since Prisma Client
+- The `code_chunks.embedding` column is `vector(768)` (Google `gemini-embedding-001`,
+  pinned to 768 output dimensions), declared via Prisma's `Unsupported("vector(768)")` since Prisma Client
   can't read/write pgvector columns natively — all embedding reads/writes go through
   raw SQL (`$queryRaw`/`$executeRaw`), isolated in `HybridSearchService` (api) and
   `persist-chunks.ts` (worker).

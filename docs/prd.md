@@ -58,7 +58,7 @@ model, because that wasn't the problem they were built to solve.
 ### In scope
 - GitHub repo ingestion: fetch tree/blobs via the GitHub API, heuristic structural
   chunking (function/class/method-aware — see ADR 0007), embed with Gemini
-  `text-embedding-004`, store in Postgres/pgvector.
+  `gemini-embedding-001`, store in Postgres/pgvector.
 - Hybrid retrieval: vector similarity + full-text search merged via Reciprocal Rank
   Fusion, cross-encoder reranked (Cohere), answered with Gemini and strict inline
   citations (`[filename:Lstart-Lend]`).

@@ -4,7 +4,10 @@ import { createGoogleGenerativeAI, type GoogleGenerativeAIProvider } from "@ai-s
 import { embed } from "ai";
 import type { AppConfig } from "../config/configuration";
 
-const EMBEDDING_MODEL = "text-embedding-004";
+// text-embedding-004 was retired by Google; gemini-embedding-001 replaces it and
+// defaults to 3072 dims, so outputDimensionality is pinned to 768 to match the
+// existing vector(768) column (see packages/db/prisma/schema.prisma).
+const EMBEDDING_MODEL = "gemini-embedding-001";
 export const EMBEDDING_DIMENSIONS = 768;
 
 @Injectable()
@@ -18,7 +21,7 @@ export class EmbeddingService {
 
   async embed(text: string): Promise<number[]> {
     const { embedding } = await embed({
-      model: this.provider.textEmbeddingModel(EMBEDDING_MODEL),
+      model: this.provider.textEmbeddingModel(EMBEDDING_MODEL, { outputDimensionality: EMBEDDING_DIMENSIONS }),
       value: text,
     });
     return embedding;

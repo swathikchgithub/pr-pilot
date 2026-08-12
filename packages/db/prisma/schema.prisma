@@ -102,8 +102,8 @@ model Repo {
   @@map("repos")
 }
 
-/// The `embedding` column is `vector(768)` (Google text-embedding-004 output
-/// dimension). Prisma Client can't read/write pgvector columns directly, so
+/// The `embedding` column is `vector(768)` (Google gemini-embedding-001, pinned to
+/// 768 output dimensions). Prisma Client can't read/write pgvector columns directly, so
 /// all writes and similarity queries against this table go through raw SQL —
 /// see RetrievalModule / worker ingestion.
 model CodeChunk {
