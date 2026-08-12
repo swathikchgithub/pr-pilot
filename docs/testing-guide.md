@@ -26,7 +26,7 @@ skipped, not failed.
 ## What's actually verified in this repository (not just claimed)
 
 At the time this was written, running the full suite produces:
-- **91 passing tests** across 7 workspaces (46 API unit + 4 API e2e + 27 worker + 5 web
+- **105 passing tests** across 7 workspaces (54 API unit + 4 API e2e + 33 worker + 5 web
   + 5 SDK + 4 UI).
 - **Zero typecheck errors** across all 7 workspaces (`npm run typecheck`).
 - **Successful production builds** for all three deployable apps (`nest build`,

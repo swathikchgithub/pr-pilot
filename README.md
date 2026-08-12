@@ -88,8 +88,8 @@ npm run typecheck     # every workspace
 cd apps/api && npm run test:e2e   # HTTP-level auth flow integration test
 ```
 
-91 tests pass across 7 workspaces as of this repository's last verified run (46 API
-unit + 4 API e2e + 27 worker + 5 web + 5 SDK + 4 UI), with zero typecheck errors and
+105 tests pass across 7 workspaces as of this repository's last verified run (54 API
+unit + 4 API e2e + 33 worker + 5 web + 5 SDK + 4 UI), with zero typecheck errors and
 successful production builds for all three apps. Details, coverage notes, and honestly-
 documented gaps: [`docs/testing-guide.md`](docs/testing-guide.md).
 
