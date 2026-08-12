@@ -1,11 +1,12 @@
 import { IsIn, IsInt, IsOptional, IsString, MinLength, validateSync } from "class-validator";
-import { plainToInstance } from "class-transformer";
+import { plainToInstance, Type } from "class-transformer";
 
 class EnvironmentVariables {
   @IsIn(["development", "production", "test"])
   @IsOptional()
   NODE_ENV = "development";
 
+  @Type(() => Number)
   @IsInt()
   @IsOptional()
   PORT = 4000;

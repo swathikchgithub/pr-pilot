@@ -3,6 +3,8 @@
 # Dockerfile path "infra/docker/worker.Dockerfile".
 FROM node:20-alpine
 
+RUN apk add --no-cache openssl
+
 WORKDIR /repo
 
 COPY . .
