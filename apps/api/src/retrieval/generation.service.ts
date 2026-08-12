@@ -6,7 +6,8 @@ import type { Citation } from "@pr-pilot/types";
 import type { AppConfig } from "../config/configuration";
 import type { RetrievedChunk } from "./retrieval.types";
 
-const CHAT_MODEL = "gemini-2.0-flash";
+// gemini-2.0-flash was retired by Google; gemini-2.5-flash is its current replacement.
+const CHAT_MODEL = "gemini-2.5-flash";
 
 const SYSTEM_PROMPT = `You are PR-Pilot, a grounded code-context assistant.
 Answer strictly using the <context> chunks provided in the user message — never

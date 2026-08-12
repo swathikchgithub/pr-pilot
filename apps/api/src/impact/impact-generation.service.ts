@@ -7,7 +7,8 @@ import type { AffectedChunk, ImpactAnalysisResponse } from "@pr-pilot/types";
 import type { AppConfig } from "../config/configuration";
 import type { RetrievedChunk } from "../retrieval/retrieval.types";
 
-const CHAT_MODEL = "gemini-2.0-flash";
+// gemini-2.0-flash was retired by Google; gemini-2.5-flash is its current replacement.
+const CHAT_MODEL = "gemini-2.5-flash";
 
 const SYSTEM_PROMPT = `You are PR-Pilot's impact-analysis engine. Given a unified diff and
 candidate code chunks retrieved from the same repository, identify what else in the codebase
