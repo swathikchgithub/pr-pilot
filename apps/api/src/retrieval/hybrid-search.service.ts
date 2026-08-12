@@ -31,7 +31,7 @@ export class HybridSearchService {
         ${repoId},
         ${queryText},
         ${vectorLiteral}::vector,
-        ${matchCount},
+        ${matchCount}::int,
         60
       )
     `;
