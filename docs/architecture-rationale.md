@@ -152,7 +152,7 @@ real usage:
 | One branch per repo | `defaultBranch` is a single stored string; no multi-branch tracking | `schema.prisma` `Repo` model |
 | `matchCount` (chunks retrieved per query) | 5–50, default 20 | `query.dto.ts:11-15` |
 | Chunks actually sent to the LLM | top 8 after rerank (query), top 12 (impact analysis) | `query.service.ts:12`, `impact.service.ts:14` |
-| API rate limit | 120 requests/minute, global, per the `ThrottlerModule` default (IP-keyed) | `app.module.ts:23` |
+| API rate limit | 120/min global default; tighter per-route overrides: `register` 5/min, `login` 10/min, `query` 20/min, `impact-analysis` 20/min. Keyed by IP (NestJS default `ThrottlerGuard`), not by API key or org — callers sharing an egress IP (e.g. a CI runner pool) share one bucket | `app.module.ts:23`, `auth.controller.ts:31-41`, `query.controller.ts:15`, `impact.controller.ts:15` |
 | Request body size | Express/Nest default (~100 KB) — not raised for the `diff` field on `/v1/impact-analysis`, which has a minimum-length check but no explicit maximum | `impact-analysis.dto.ts`, `main.ts` |
 | Embedding dimensionality | fixed at 768, hardcoded into the `vector(768)` column | `schema.prisma`, both embedding services |
 | Repo registration | GitHub only, `https://github.com/<owner>/<repo>` — no GitLab/Bitbucket, no SSH URLs (rejected by design) | `github-url.util.ts` |
