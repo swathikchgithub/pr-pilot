@@ -36,6 +36,8 @@ Google Gemini provides embeddings + generation; Cohere provides reranking.
 Full diagrams and request/ingestion sequence flows: [`docs/architecture.md`](docs/architecture.md).
 Technical design (algorithms, complexity, module boundaries): [`docs/tdd.md`](docs/tdd.md).
 Design decisions and their trade-offs: [`docs/adrs/`](docs/adrs/).
+Why this architecture overall, its advantages/disadvantages, bottlenecks, and current
+functional limits: [`docs/architecture-rationale.md`](docs/architecture-rationale.md).
 
 ## Local setup
 
