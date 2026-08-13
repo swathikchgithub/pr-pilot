@@ -1,4 +1,4 @@
-# API Specification
+# API Reference
 
 Base URL: `NEXT_PUBLIC_API_URL` (local: `http://localhost:4000`).
 
