@@ -69,6 +69,9 @@ impact-analysis API itself (the wedge); the governance tier monetizes the moat
 
 ## 5. Demo script (for investors, design partners, or a recorded walkthrough)
 
+Shot-by-shot version with exact commands and clicks for recording this:
+[`recording-script.md`](recording-script.md).
+
 1. **Open with the pain, not the product**: "Your AI agents are already shipping PRs.
    Can you tell me, right now, what context an agent read before its last change? Most
    teams can't." (30 seconds)
